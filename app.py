@@ -38,6 +38,14 @@ def hello_template():
 def send_file(filename):
 	return send_from_directory('static', filename)
 
+@app.route('/static2/<path:filename>')
+def send_file2(filename):
+	return send_from_directory('static2', filename)
+
+@app.route('/about')
+def about():
+	return render_template('about.html')
+
 
 if __name__ == '__main__':
 	app.run(debug=True)
